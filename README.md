@@ -1,7 +1,7 @@
 
 # Movie Database App
 
-A brief description of what this project does and who it's for
+Movie Database app leveraging TMDb APIs to display data.
 
 
 ## Features
