@@ -6,17 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		70312BA52CD54FBD00DF6406 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 70312BA42CD54FBD00DF6406 /* SDWebImageSwiftUI */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		709B21E42CD397FE00AD8F78 /* TMDbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		70312BB12CD5625800DF6406 /* Exceptions for "TMDbApp" folder in "TMDbApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 709B21E32CD397FE00AD8F78 /* TMDbApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		709B21E62CD397FE00AD8F78 /* TMDbApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				70312BB12CD5625800DF6406 /* Exceptions for "TMDbApp" folder in "TMDbApp" target */,
+			);
 			path = TMDbApp;
 			sourceTree = "<group>";
 		};
@@ -27,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70312BA52CD54FBD00DF6406 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +78,6 @@
 			);
 			name = TMDbApp;
 			packageProductDependencies = (
-				70312BA42CD54FBD00DF6406 /* SDWebImageSwiftUI */,
 			);
 			productName = TMDbApp;
 			productReference = 709B21E42CD397FE00AD8F78 /* TMDbApp.app */;
@@ -101,7 +108,6 @@
 			mainGroup = 709B21DB2CD397FE00AD8F78;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				70312BA32CD54FBD00DF6406 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 709B21E52CD397FE00AD8F78 /* Products */;
@@ -255,6 +261,8 @@
 		};
 		709B21F32CD397FF00AD8F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 709B21E62CD397FE00AD8F78 /* TMDbApp */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -264,6 +272,7 @@
 				DEVELOPMENT_TEAM = 29H4CWMBST;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TMDbApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,6 +294,8 @@
 		};
 		709B21F42CD397FF00AD8F78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 709B21E62CD397FE00AD8F78 /* TMDbApp */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,6 +305,7 @@
 				DEVELOPMENT_TEAM = 29H4CWMBST;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TMDbApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -335,25 +347,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		70312BA32CD54FBD00DF6406 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		70312BA42CD54FBD00DF6406 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 70312BA32CD54FBD00DF6406 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 709B21DC2CD397FE00AD8F78 /* Project object */;
 }

@@ -13,6 +13,7 @@ import Observation
 @Observable
 class MovieListViewModel {
     var movies: [Movie] = []
+    var runtimes: [Int: Int] = [:]
     private let movieService: MovieServiceProtocol
     private var currentPage = 1
     private var totalPages = 1
@@ -31,6 +32,9 @@ class MovieListViewModel {
             self.movies += movieModel.results
             self.currentPage = movieModel.page
             self.totalPages = movieModel.totalPages
+            for movie in movieModel.results {
+                await fetchMovieDetailsIfNeeded(for: movie)
+            }
         } catch {
             print("Error fetching movies: \(error)")
         }
@@ -42,6 +46,18 @@ class MovieListViewModel {
         
         if index >= movies.count - 5 {
             await fetchMovies(page: currentPage + 1)
+        }
+    }
+    private func fetchMovieDetailsIfNeeded(for movie: Movie) async {
+        guard runtimes[movie.id] == nil else { return } // skipping if runtime already fetched
+
+        do {
+            let details = try await movieService.fetchMovieDetails(movieID: movie.id)
+            if let runtime = details.runtime {
+                self.runtimes[movie.id] = runtime
+            }
+        } catch {
+            print("Error fetching details for movie \(movie.id): \(error)")
         }
     }
 }

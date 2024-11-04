@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
+//import SDWebImageSwiftUI
 
 struct MovieItemView: View {
     let movie: Movie
+    let runtime: Int?
     @Environment(ScreenSize.self) var screenSize
 
     var body: some View {
@@ -41,9 +42,11 @@ struct MovieItemView: View {
                 MarqueeText(text: movie.title, font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 16, rightFade: 16, startDelay: 2)
                     .foregroundStyle(.white)
                 
-                Text("Duration: CHANGE mins")
-                    .font(.caption)
-                    .foregroundColor(.white.opacity(0.8))
+                if let runtime {
+                    Text("Duration: \(runtime) mins")
+                        .font(.caption)
+                        .foregroundColor(.white.opacity(0.8))
+                }
                 
                 HStack {
                     Text("⭐️ \(movie.voteAverage, specifier: "%.1f")")

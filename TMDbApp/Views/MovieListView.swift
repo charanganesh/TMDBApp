@@ -38,9 +38,10 @@ struct MovieListView: View {
                  */
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.movies, id: \.id) { movie in
+                        let runtime = viewModel.runtimes[movie.id]
                         if #available (iOS 18.0, *) {
                             NavigationLink(value: movie) {
-                                MovieItemView(movie: movie)
+                                MovieItemView(movie: movie, runtime: runtime ?? nil)
                                     .onAppear {
                                         Task {
                                             await viewModel.loadNextPageIfNeeded(currentMovie: movie)
@@ -50,7 +51,7 @@ struct MovieListView: View {
                             .matchedTransitionSource(id: movie.id, in: namespace)
                         } else {
                             NavigationLink(value: movie) {
-                                MovieItemView(movie: movie)
+                                MovieItemView(movie: movie, runtime: runtime ?? nil)
                                     .onAppear {
                                         Task {
                                             await viewModel.loadNextPageIfNeeded(currentMovie: movie)
