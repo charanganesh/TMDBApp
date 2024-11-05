@@ -30,7 +30,7 @@ final class API {
         }
 
         var allQueryItems = [
-            URLQueryItem(name: "api_key", value: "213b6babae2e0a4efd3712b3d21ceb9f")
+            URLQueryItem(name: "api_key", value: AppConfig.tmdbApiKey)
         ]
         
         allQueryItems.append(contentsOf: queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) })
